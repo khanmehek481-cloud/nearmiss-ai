@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NearMiss AI | Campus Safety</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">⚠️ <b>NearMiss AI</b><small>Campus Safety Intelligence</small></div>
+  <button onclick="showReport()">＋ Report Near-Miss</button>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">PREVENT • PREDICT • PROTECT</p>
+    <h1>Don't wait for an accident.<br><span>Learn from the ones that almost happened.</span></h1>
+    <p>NearMiss collects small safety incidents, identifies repeated patterns and highlights areas that may require preventive action.</p>
+    <button onclick="showReport()">Report an Incident</button>
+  </div>
+  <div class="hero-card"><small>LIVE RISK STATUS</small><strong id="status">LOW</strong><p>Based on current reports</p></div>
+</section>
+
+<section class="stats">
+  <div><b id="total">0</b><span>Total Reports</span></div>
+  <div><b id="high">0</b><span>High-Risk Reports</span></div>
+  <div><b id="zones">0</b><span>Risk Zones</span></div>
+  <div><b id="trend">0%</b><span>Risk Trend</span></div>
+</section>
+
+<section class="grid">
+<div class="panel">
+  <h2>Campus Risk Map</h2>
+  <p>Illustrative prototype heatmap</p>
+  <div class="map">
+    <div class="building a">BLOCK A</div><div class="building b">BLOCK B</div>
+    <div class="building c">LABS</div><div class="building d">LIBRARY</div>
+    <div class="hot h1">!</div><div class="hot h2">!</div><div class="hot h3">!</div>
+  </div>
+</div>
+<div class="panel">
+  <h2>Priority Zones</h2>
+  <p>Locations with repeated reports</p>
+  <div id="riskList"></div>
+</div>
+</section>
+
+<section class="grid">
+<div class="panel">
+  <h2>Recent Near-Misses</h2>
+  <div id="reports"></div>
+</div>
+<div class="panel" id="reportBox">
+  <h2>Report a Near-Miss</h2>
+  <form id="form">
+    <label>Location<select id="location" required>
+      <option value="">Choose location</option><option>Block B Staircase</option>
+      <option>Lab Entrance</option><option>Canteen</option><option>Library Corridor</option>
+      <option>Parking Area</option>
+    </select></label>
+    <label>Incident Type<select id="type" required>
+      <option value="">Choose type</option><option>Slip / Fall</option>
+      <option>Collision</option><option>Electrical Hazard</option>
+      <option>Blocked Exit</option><option>Overcrowding</option>
+    </select></label>
+    <label>Severity<select id="severity" required>
+      <option value="">Choose severity</option><option value="1">Low</option>
+      <option value="2">Moderate</option><option value="3">High</option>
+    </select></label>
+    <label>Description<textarea id="description" placeholder="What almost happened?" required></textarea></label>
+    <button type="submit">Submit Report</button>
+  </form>
+  <div id="message"></div>
+</div>
+</section>
+</main>
+<footer>NearMiss AI — Prototype for preventive campus safety</footer>
+<script src="app.js"></script>
+</body>
+</html>
